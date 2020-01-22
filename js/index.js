@@ -36,8 +36,8 @@ introP.addEventListener('click', () => {
 // Event 7: dblclick
 let introH2 = document.querySelector(".intro h2");
 introH2.addEventListener('dblclick', () => {
-  introH2.style.color = "#84DE02";
-  introH2.style.backgroundColor = "#000000";
+  introH2.style.transform = "rotate(360deg)";
+  introH2.style.transition = "all 1s";
 })
 
 
@@ -53,26 +53,47 @@ mapIMG.addEventListener('mouseenter', () => {
   mapIMG.style.transition = "all 1s";
 })
 
-// let contentP = document.querySelector(".content-section p");
-// contentP.addEventListener('wheel', () => {
-//   contentP.style.color = "#84DE02";
-//   contentP.style.backgroundColor = "#000000";
-// })
 
-// Event 6: scroll
 
-// Event 7: drag / drop
+// Event 9: dragstart
+// Event 10: dragend
+let boatIMG = document.querySelector(".img-content img.img-fluid.rounded");
 
-// Event 8: keydown (keydown/keypress/keyup)
+boatIMG.addEventListener('dragstart', () => {
+  boatIMG.style.transform = "scale(2)";
+  boatIMG.style.transition = "all 1s";
+})
+boatIMG.addEventListener('dragend', () => {
+ boatIMG.style.transform = "scale(1)";
+  boatIMG.style.transition = "all 1s";
+})
 
-// Event 9: 
+//Event 11: drag
 
-// Event 10: 
+let gondalaIMG = document.querySelector(".content-destination img");
 
-// Possible Extra Events
-//mouseover
-//mouseout
-//mousemove 
-// load
-// focus
-// select
+gondalaIMG.addEventListener('drag', () => {
+  gondalaIMG.style.transform = "scale(.5)";
+  gondalaIMG.style.transition = "all 1s";
+})
+gondalaIMG.addEventListener('dragend', () => {
+  gondalaIMG.style.transform = "scale(1)";
+  gondalaIMG.style.transition = "all 1s";
+})
+
+//Stop Propagation
+
+let buttons = document.querySelector(".btn");
+buttons.addEventListener('click', (event) => {
+  buttons.style.backgroundColor="#FEFEFE";
+  event.stopPropagation();
+  console.log("start")})
+
+
+  //Prevent Default
+
+  let stopLink = document.querySelector(".main-navigatio");
+  stopLink.addEventListener('click', (event) => {
+    event.preventDefault();
+    console.log('stopped!');
+  });
