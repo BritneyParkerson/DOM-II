@@ -41,11 +41,16 @@ introH2.addEventListener('dblclick', () => {
 })
 
 
-// Event 5: wheel
-let contentP = document.querySelector(".content-section");
-contentP.addEventListener('scroll', () => {
-  contentP.style.color = "#84DE02";
-  contentP.style.backgroundColor = "#000000";
+// Event 8: mouseout
+let mapIMG = document.querySelector(".img-content img");
+
+mapIMG.addEventListener('mouseout', () => {
+  mapIMG.style.transform = "rotate(0deg)";
+  mapIMG.style.transition = "all 1s";
+})
+mapIMG.addEventListener('mouseenter', () => {
+ mapIMG.style.transform = "rotate(140deg)";
+  mapIMG.style.transition = "all 1s";
 })
 
 // let contentP = document.querySelector(".content-section p");
@@ -60,9 +65,9 @@ contentP.addEventListener('scroll', () => {
 
 // Event 8: keydown (keydown/keypress/keyup)
 
-// Event 9: mousedown
+// Event 9: 
 
-// Event 10: mouseup
+// Event 10: 
 
 // Possible Extra Events
 //mouseover
